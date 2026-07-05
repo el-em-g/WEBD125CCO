@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-labelledby="p1Title">
+  <title id="p1Title">Placeholder thumbnail for Project One</title>
+  <rect width="400" height="240" fill="#1b263b"/>
+  <circle cx="120" cy="120" r="70" fill="#3ddc97"/>
+  <text x="200" y="220" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#f8f9fa" text-anchor="middle">Project One</text>
+</svg>

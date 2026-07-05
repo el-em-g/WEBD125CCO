@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="avatarTitle">
+  <title id="avatarTitle">Placeholder profile portrait</title>
+  <rect width="400" height="400" fill="#3ddc97"/>
+  <circle cx="200" cy="165" r="95" fill="#1b263b"/>
+  <path d="M45 400 C45 268 355 268 355 400 Z" fill="#1b263b"/>
+</svg>

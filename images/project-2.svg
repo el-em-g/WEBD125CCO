@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-labelledby="p2Title">
+  <title id="p2Title">Placeholder thumbnail for Project Two</title>
+  <rect width="400" height="240" fill="#1b263b"/>
+  <polygon points="120,50 190,190 50,190" fill="#f4a261"/>
+  <text x="200" y="220" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#f8f9fa" text-anchor="middle">Project Two</text>
+</svg>

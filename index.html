@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Your Name — Interactive Resume</title>
+  <meta name="description" content="Interactive resume and portfolio for Your Name, web developer." />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="visually-hidden-focusable btn btn-dark position-absolute top-0 start-0 m-2" href="#main-content">Skip to main content</a>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark site-nav" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Your Name</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item mt-2 mt-lg-0">
+              <button id="themeToggle" type="button" class="btn btn-outline-light btn-sm theme-toggle-btn" aria-pressed="false">🌙 Dark</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="py-5" aria-labelledby="heroHeading">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 col-lg-6">
+            <div class="card profile-card shadow text-center p-4">
+              <div class="card-body">
+                <figure class="mb-3">
+                  <img src="images/avatar.svg" alt="Placeholder portrait illustration of Your Name" class="profile-card__avatar rounded-circle img-fluid mx-auto d-block" />
+                  <figcaption class="visually-hidden">Placeholder profile illustration</figcaption>
+                </figure>
+                <h1 id="heroHeading" class="h3 mb-1">Your Name</h1>
+                <p class="text-muted mb-3">Web Developer &middot; Champlain College</p>
+                <p class="mb-4">
+                  Replace this paragraph with a short introduction: who you are, what you build,
+                  and what makes your work distinct. Two to three sentences is plenty.
+                </p>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                  <span class="badge text-bg-secondary">HTML</span>
+                  <span class="badge text-bg-secondary">CSS</span>
+                  <span class="badge text-bg-secondary">JavaScript</span>
+                  <span class="badge text-bg-secondary">Bootstrap</span>
+                </div>
+                <div class="d-flex justify-content-center gap-3 mt-4">
+                  <a href="resume.html" class="btn btn-dark">View Résumé</a>
+                  <a href="portfolio.html" class="btn btn-outline-theme">View Portfolio</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-body-tertiary" aria-labelledby="highlightsHeading">
+      <div class="container">
+        <h2 id="highlightsHeading" class="section-title">Highlights</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="p-4 h-100 border rounded-3">
+              <h3 class="h5">Placeholder Highlight One</h3>
+              <p class="mb-0">Describe a notable skill, achievement, or project in a sentence or two.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-4 h-100 border rounded-3">
+              <h3 class="h5">Placeholder Highlight Two</h3>
+              <p class="mb-0">Describe a notable skill, achievement, or project in a sentence or two.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-4 h-100 border rounded-3">
+              <h3 class="h5">Placeholder Highlight Three</h3>
+              <p class="mb-0">Describe a notable skill, achievement, or project in a sentence or two.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <p class="mb-0">&copy; 2026 Your Name. All rights reserved.</p>
+      <div class="social-links d-flex gap-2">
+        <a href="#" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Your Name on GitHub">GitHub</a>
+        <a href="#" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Your Name on LinkedIn">LinkedIn</a>
+        <a href="contact.html" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Contact Your Name">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

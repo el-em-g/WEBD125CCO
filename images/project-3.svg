@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" role="img" aria-labelledby="p3Title">
+  <title id="p3Title">Placeholder thumbnail for Project Three</title>
+  <rect width="400" height="240" fill="#1b263b"/>
+  <rect x="60" y="60" width="120" height="120" fill="#e76f51"/>
+  <text x="200" y="220" font-family="'Segoe UI', Arial, sans-serif" font-size="18" fill="#f8f9fa" text-anchor="middle">Project Three</text>
+</svg>
