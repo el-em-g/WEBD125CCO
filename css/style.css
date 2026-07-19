@@ -2,22 +2,25 @@
    Variables & theme
    ========================================================= */
 :root {
-  --color-bg: #f8f9fa;
+  --color-bg: #f5f0f8;
   --color-surface: #ffffff;
   --color-text: #1b263b;
-  --color-muted: #6c757d;
-  --color-primary: #1b263b;
-  --color-accent: #3ddc97;
+  --color-muted: #9a98b5;
+  --color-primary: #802392;
+  --color-secondary: #995fa3;
+  --color-accent: #a5f8d3;
   --radius: 0.75rem;
   --transition: 0.2s ease;
   --font-base: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 [data-bs-theme="dark"] {
-  --color-bg: #0d1321;
-  --color-surface: #1b263b;
-  --color-text: #f8f9fa;
-  --color-muted: #adb5bd;
+  --color-bg: #160a1f;
+  --color-surface: #231030;
+  --color-text: #f0ecf5;
+  --color-muted: #9a98b5;
+  --color-secondary: #b87fc0;
+  --color-accent: #a5f8d3;
 }
 
 /* =========================================================
@@ -39,7 +42,7 @@ main {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .section-title {
@@ -55,6 +58,7 @@ a {
    ========================================================= */
 .site-nav {
   background-color: var(--color-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .site-nav .navbar-brand {
@@ -89,6 +93,20 @@ a {
 .btn-outline-theme:hover {
   background-color: var(--color-text);
   color: var(--color-bg);
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-bg: var(--color-secondary);
+  --bs-btn-hover-border-color: var(--color-secondary);
+  --bs-btn-active-bg: var(--color-secondary);
+  --bs-btn-active-border-color: var(--color-secondary);
+}
+
+.highlight-box {
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius);
 }
 
 /* =========================================================
