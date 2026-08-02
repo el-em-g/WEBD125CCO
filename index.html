@@ -3,75 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Laura Gurdak — Interactive Resume</title>
+  <title>Laura Gurdak — Interactive Resume</title>
   <meta name="description" content="Interactive resume and portfolio for Laura Gurdak, Data Science student at Champlain College." />
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#sidebarNav" data-bs-offset="80" tabindex="0">
   <a class="visually-hidden-focusable btn btn-dark position-absolute top-0 start-0 m-2" href="#main-content">Skip to main content</a>
 
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark site-nav" aria-label="Main navigation">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Laura Gurdak</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            <li class="nav-item mt-2 mt-lg-0">
-              <button id="themeToggle" type="button" class="btn btn-outline-light btn-sm theme-toggle-btn" aria-pressed="false">🌙 Dark</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <div class="page-shell">
+    <!-- Sticky sidebar: custom Bootstrap component combining navbar, navbar-nav,
+         collapse/navbar-toggler, and btn classes into a persistent site-wide nav -->
+    <header class="site-sidebar">
+      <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
+        <div class="sidebar-inner">
+          <div class="sidebar-top">
+            <a class="navbar-brand sidebar-brand" href="#about">Laura Gurdak</a>
+            <p class="sidebar-tagline">AS, Data Science &middot; Champlain College</p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
 
-  <main id="main-content">
-    <section class="py-5" aria-labelledby="heroHeading">
-      <div class="container">
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav sidebar-nav" id="sidebarNav">
+              <li class="nav-item">
+                <a class="nav-link" href="#about"><span class="nav-index">01.</span> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#experience"><span class="nav-index">02.</span> Experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#projects"><span class="nav-index">03.</span> Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact"><span class="nav-index">04.</span> Contact</a>
+              </li>
+            </ul>
+
+            <div class="sidebar-bottom">
+              <button id="themeToggle" type="button" class="btn btn-outline-light btn-sm theme-toggle-btn" aria-pressed="false">🌙 Dark</button>
+              <div class="social-links d-flex gap-2 mt-3">
+                <a href="#" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Laura Gurdak on GitHub">GitHub</a>
+                <a href="#" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Laura Gurdak on LinkedIn">LinkedIn</a>
+                <a href="#contact" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Contact Laura Gurdak">Email</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content" class="site-main">
+      <!-- About: intro card + placeholder highlight cards -->
+      <section id="about" class="content-section" aria-labelledby="aboutHeading">
+        <h2 id="aboutHeading" class="section-title"><span class="section-number">01.</span>About</h2>
+
         <div class="row justify-content-center">
-          <div class="col-12 col-md-8 col-lg-6">
-            <div class="card profile-card shadow text-center p-4">
-              <div class="card-body">
-                <figure class="mb-3">
+          <div class="col-12 col-md-8 col-lg-9">
+            <div class="card profile-card shadow text-center text-lg-start p-4">
+              <div class="card-body d-lg-flex align-items-center gap-4">
+                <figure class="mb-3 mb-lg-0 flex-shrink-0">
                   <img src="images/avatar.svg" alt="Placeholder portrait illustration of Laura Gurdak" class="profile-card__avatar rounded-circle img-fluid mx-auto d-block" />
                   <figcaption class="visually-hidden">Placeholder profile illustration</figcaption>
                 </figure>
-                <h1 id="heroHeading" class="h3 mb-1">Laura Gurdak</h1>
-                <p class="text-muted mb-3">AS, Data Science &middot; Champlain College</p>
-                <p class="mb-4">
-                  Replace this paragraph with a short introduction: who you are, what you build,
-                  and what makes your work distinct. Two to three sentences is plenty.
-                </p>
-                <div class="d-flex justify-content-center gap-2 flex-wrap">
-                  <span class="badge text-bg-secondary">HTML</span>
-                  <span class="badge text-bg-secondary">CSS</span>
-                  <span class="badge text-bg-secondary">JavaScript</span>
-                  <span class="badge text-bg-secondary">Bootstrap</span>
-                </div>
-                <div class="d-flex justify-content-center gap-3 mt-4">
-                  <a href="resume.html" class="btn btn-dark">View Résumé</a>
-                  <a href="portfolio.html" class="btn btn-outline-theme">View Portfolio</a>
+                <div>
+                  <p class="mb-3">
+                    Replace this paragraph with a short introduction: who you are, what you build,
+                    and what makes your work distinct. Two to three sentences is plenty.
+                  </p>
+                  <div class="d-flex justify-content-center justify-content-lg-start gap-2 flex-wrap">
+                    <span class="badge text-bg-secondary">HTML</span>
+                    <span class="badge text-bg-secondary">CSS</span>
+                    <span class="badge text-bg-secondary">JavaScript</span>
+                    <span class="badge text-bg-secondary">Bootstrap</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="py-5 bg-body-tertiary" aria-labelledby="highlightsHeading">
-      <div class="container">
-        <h2 id="highlightsHeading" class="section-title">Highlights</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
           <div class="col">
             <div class="p-4 h-100 highlight-box">
               <h3 class="h5">Placeholder Highlight One</h3>
@@ -91,20 +105,243 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer class="site-footer py-4">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-      <p class="mb-0">&copy; 2026 Laura Gurdak. All rights reserved.</p>
-      <div class="social-links d-flex gap-2">
-        <a href="#" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Laura Gurdak on GitHub">GitHub</a>
-        <a href="#" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Laura Gurdak on LinkedIn">LinkedIn</a>
-        <a href="contact.html" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Contact Laura Gurdak">Email</a>
-      </div>
-    </div>
-  </footer>
+      <!-- Experience: work history, education, and skills -->
+      <section id="experience" class="content-section" aria-labelledby="experienceHeading">
+        <h2 id="experienceHeading" class="section-title"><span class="section-number">02.</span>Experience</h2>
+
+        <div class="mb-5">
+          <h3 class="h5 mb-3">Work History</h3>
+          <div class="accordion" id="experienceAccordion">
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="exp1Heading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#exp1Collapse" aria-expanded="true" aria-controls="exp1Collapse">
+                  Job Title — Company Name (Month Year – Present)
+                </button>
+              </h4>
+              <div id="exp1Collapse" class="accordion-collapse collapse show" role="region" aria-labelledby="exp1Heading" data-bs-parent="#experienceAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li>Replace with a responsibility or accomplishment.</li>
+                    <li>Replace with a responsibility or accomplishment.</li>
+                    <li>Replace with a responsibility or accomplishment.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="exp2Heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp2Collapse" aria-expanded="false" aria-controls="exp2Collapse">
+                  Job Title — Company Name (Month Year – Month Year)
+                </button>
+              </h4>
+              <div id="exp2Collapse" class="accordion-collapse collapse" role="region" aria-labelledby="exp2Heading" data-bs-parent="#experienceAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li>Replace with a responsibility or accomplishment.</li>
+                    <li>Replace with a responsibility or accomplishment.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <h3 class="h5 mb-3">Education</h3>
+          <div class="accordion" id="educationAccordion">
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="edu1Heading">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#edu1Collapse" aria-expanded="true" aria-controls="edu1Collapse">
+                  AS, Data Science — Champlain College (Expected August 2026)
+                </button>
+              </h4>
+              <div id="edu1Collapse" class="accordion-collapse collapse show" role="region" aria-labelledby="edu1Heading" data-bs-parent="#educationAccordion">
+                <div class="accordion-body">
+                  <ul class="mb-2">
+                    <li>Member, Alpha Sigma Lambda National Honor Society</li>
+                    <li>President's List, Champlain College</li>
+                    <li>Trustee's List, Champlain College</li>
+                  </ul>
+                  <p class="mb-0">View honors on <a href="https://meritpages.com/lauragurdak" target="_blank" rel="noopener noreferrer">MeritPages</a>.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="edu2Heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#edu2Collapse" aria-expanded="false" aria-controls="edu2Collapse">
+                  Certificate, Software Development — Champlain College (Expected August 2026)
+                </button>
+              </h4>
+              <div id="edu2Collapse" class="accordion-collapse collapse" role="region" aria-labelledby="edu2Heading" data-bs-parent="#educationAccordion">
+                <div class="accordion-body">
+                  <p class="mb-0">Replace with relevant coursework, honors, or GPA.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="edu3Heading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#edu3Collapse" aria-expanded="false" aria-controls="edu3Collapse">
+                  AAS, Business Technology and Management — Vermont Technical College (2007)
+                </button>
+              </h4>
+              <div id="edu3Collapse" class="accordion-collapse collapse" role="region" aria-labelledby="edu3Heading" data-bs-parent="#educationAccordion">
+                <div class="accordion-body">
+                  <p class="mb-0">Replace with relevant coursework, honors, or GPA.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="h5 mb-3">Skills</h3>
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col skill-bar">
+              <div class="d-flex justify-content-between">
+                <span class="form-label mb-1">HTML &amp; CSS</span>
+                <span>90%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="HTML and CSS proficiency" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" id="skillHtml">
+                <div class="progress-bar skill-90"></div>
+              </div>
+            </div>
+            <div class="col skill-bar">
+              <div class="d-flex justify-content-between">
+                <span class="form-label mb-1">JavaScript</span>
+                <span>75%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="JavaScript proficiency" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" id="skillJs">
+                <div class="progress-bar skill-75"></div>
+              </div>
+            </div>
+            <div class="col skill-bar">
+              <div class="d-flex justify-content-between">
+                <span class="form-label mb-1">Bootstrap</span>
+                <span>80%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Bootstrap proficiency" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" id="skillBootstrap">
+                <div class="progress-bar skill-80"></div>
+              </div>
+            </div>
+            <div class="col skill-bar">
+              <div class="d-flex justify-content-between">
+                <span class="form-label mb-1">Git &amp; GitHub</span>
+                <span>70%</span>
+              </div>
+              <div class="progress" role="progressbar" aria-label="Git and GitHub proficiency" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" id="skillGit">
+                <div class="progress-bar skill-70"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects: filterable portfolio grid -->
+      <section id="projects" class="content-section" aria-labelledby="projectsHeading">
+        <h2 id="projectsHeading" class="section-title"><span class="section-number">03.</span>Projects</h2>
+
+        <div class="filter-bar btn-group mb-4 flex-wrap" role="group" aria-label="Filter projects by category">
+          <button type="button" class="btn active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="btn" data-filter="web" aria-pressed="false">Web</button>
+          <button type="button" class="btn" data-filter="design" aria-pressed="false">Design</button>
+          <button type="button" class="btn" data-filter="school" aria-pressed="false">School</button>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col" data-category="web">
+            <div class="card project-card shadow-sm h-100">
+              <figure class="mb-0">
+                <img src="images/project-1.svg" class="img-fluid w-100" alt="Placeholder thumbnail representing Project One" />
+                <figcaption class="visually-hidden">Project One thumbnail</figcaption>
+              </figure>
+              <div class="card-body">
+                <h3 class="h5 card-title">Project One</h3>
+                <p class="card-text">Short description of the project, the tools used, and your role.</p>
+                <a href="#" class="btn btn-sm btn-outline-theme">View Project</a>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-category="design">
+            <div class="card project-card shadow-sm h-100">
+              <figure class="mb-0">
+                <img src="images/project-2.svg" class="img-fluid w-100" alt="Placeholder thumbnail representing Project Two" />
+                <figcaption class="visually-hidden">Project Two thumbnail</figcaption>
+              </figure>
+              <div class="card-body">
+                <h3 class="h5 card-title">Project Two</h3>
+                <p class="card-text">Short description of the project, the tools used, and your role.</p>
+                <a href="#" class="btn btn-sm btn-outline-theme">View Project</a>
+              </div>
+            </div>
+          </div>
+          <div class="col" data-category="school">
+            <div class="card project-card shadow-sm h-100">
+              <figure class="mb-0">
+                <img src="images/project-3.svg" class="img-fluid w-100" alt="Placeholder thumbnail representing Project Three" />
+                <figcaption class="visually-hidden">Project Three thumbnail</figcaption>
+              </figure>
+              <div class="card-body">
+                <h3 class="h5 card-title">Project Three</h3>
+                <p class="card-text">Short description of the project, the tools used, and your role.</p>
+                <a href="#" class="btn btn-sm btn-outline-theme">View Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact: validated form + alternate contact methods -->
+      <section id="contact" class="content-section" aria-labelledby="contactHeading">
+        <h2 id="contactHeading" class="section-title"><span class="section-number">04.</span>Contact</h2>
+
+        <div class="row">
+          <div class="col-12 col-lg-7">
+            <div id="formSuccess" class="alert alert-success d-none" role="alert">
+              Thanks for reaching out! This is a placeholder confirmation — no message was actually sent
+              because the form isn't connected to a backend yet.
+            </div>
+
+            <form class="contact-form needs-validation shadow-sm" novalidate>
+              <div class="mb-3">
+                <label for="contactName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="contactName" name="name" required />
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+              <div class="mb-3">
+                <label for="contactEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="contactEmail" name="email" required />
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+              <div class="mb-3">
+                <label for="contactMessage" class="form-label">Message</label>
+                <textarea class="form-control" id="contactMessage" name="message" rows="5" required></textarea>
+                <div class="invalid-feedback">Please enter a message.</div>
+              </div>
+              <button type="submit" class="btn btn-dark">Send Message</button>
+            </form>
+          </div>
+
+          <div class="col-12 col-lg-5 mt-4 mt-lg-0">
+            <h3 class="h5">Other ways to reach me</h3>
+            <ul class="list-unstyled">
+              <li class="mb-2">Email: <a href="mailto:you@example.com">you@example.com</a></li>
+              <li class="mb-2">Location: City, State</li>
+            </ul>
+            <div class="social-links d-flex gap-2 mt-3">
+              <a href="#" class="btn btn-outline-theme btn-sm rounded-pill" aria-label="Laura Gurdak on GitHub">GitHub</a>
+              <a href="#" class="btn btn-outline-theme btn-sm rounded-pill" aria-label="Laura Gurdak on LinkedIn">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer-inline">
+        <p class="mb-0 small">&copy; 2026 Laura Gurdak. Built with HTML, CSS, JavaScript &amp; Bootstrap.</p>
+      </footer>
+    </main>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
