@@ -311,28 +311,24 @@ a {
   background-color: var(--color-surface);
 }
 
-.skill-bar .progress {
-  height: 0.6rem;
+.skill-group-label {
+  color: var(--color-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
 }
 
-.skill-bar .progress-bar {
-  background-color: var(--color-accent);
+/* =========================================================
+   Data (Tableau embed)
+   ========================================================= */
+.tableau-embed {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 1rem;
+  overflow-x: auto;
 }
 
-.skill-bar .progress-bar.skill-70 {
-  width: 70%;
-}
-
-.skill-bar .progress-bar.skill-75 {
-  width: 75%;
-}
-
-.skill-bar .progress-bar.skill-80 {
-  width: 80%;
-}
-
-.skill-bar .progress-bar.skill-90 {
-  width: 90%;
+.tableau-embed figcaption {
+  color: var(--color-muted);
 }
 
 /* =========================================================
