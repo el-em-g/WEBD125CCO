@@ -3,69 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laura Gurdak — Interactive Resume</title>
+  <title>Laura Gurdak | Interactive Resume</title>
   <meta name="description" content="Interactive resume and portfolio for Laura Gurdak, Data Science student at Champlain College." />
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body data-bs-spy="scroll" data-bs-target="#sidebarNav" data-bs-offset="80" tabindex="0">
+<body data-bs-spy="scroll" data-bs-target="#primaryNav" data-bs-offset="120" tabindex="0">
   <a class="visually-hidden-focusable btn btn-dark position-absolute top-0 start-0 m-2" href="#main-content">Skip to main content</a>
 
-  <div class="page-shell">
-    <!-- Sticky sidebar: custom Bootstrap component combining navbar, navbar-nav,
-         collapse/navbar-toggler, and btn classes into a persistent site-wide nav -->
-    <header class="site-sidebar">
-      <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
-        <div class="sidebar-inner">
-          <div class="sidebar-top">
-            <a class="navbar-brand sidebar-brand" href="#about">Laura Gurdak</a>
-            <p class="sidebar-tagline">AS, Data Science &middot; Champlain College</p>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+  <!-- Sticky glass nav: custom Bootstrap component combining navbar, navbar-nav,
+       collapse/navbar-toggler, and btn classes into one persistent site-wide nav -->
+  <div class="nav-shell">
+    <nav class="navbar navbar-expand-lg site-nav" aria-label="Main navigation">
+      <div class="container-fluid px-2">
+        <a class="navbar-brand brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">LG</span>
+          Laura Gurdak
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="mainNav">
+          <ul class="navbar-nav" id="primaryNav">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#data">Data</a></li>
+          </ul>
+          <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0 mb-2 mb-lg-0">
+            <button id="themeToggle" type="button" class="btn btn-sm theme-toggle-btn" aria-pressed="false">🌙 Dark</button>
+            <a href="#contact" class="btn btn-sm btn-gradient">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section id="top" class="hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6">
+            <span class="eyebrow-pill"><span class="swatch" aria-hidden="true"></span> Data Science &amp; Software Development</span>
+            <h1>
+              Building thoughtful software with a
+              <span class="hero-underline">data&#8209;first<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 40 2, 70 10, 100 6 S 160 2, 198 8" fill="none" stroke="var(--butter)" stroke-width="5" stroke-linecap="round"/></svg></span>
+              mind.
+            </h1>
+            <p class="hero-sub">
+              I'm a data science student and software development intern who turns business
+              problems into clean APIs, dashboards, and analysis, grounded in years of actually
+              running a business myself.
+            </p>
+            <div class="d-flex gap-3 flex-wrap">
+              <a href="#projects" class="btn btn-gradient">View my work</a>
+              <a href="#contact" class="btn btn-outline-theme">Get in touch</a>
+            </div>
+            <div class="hero-meta">
+              <div><strong>3+</strong><span>Platforms integrated</span></div>
+              <div><strong>10 yrs</strong><span>Running a business</span></div>
+              <div><strong>A.S.</strong><span>Data Science, 2026</span></div>
+            </div>
           </div>
 
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav sidebar-nav" id="sidebarNav">
-              <li class="nav-item">
-                <a class="nav-link" href="#about"><span class="nav-index">01.</span> About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#experience"><span class="nav-index">02.</span> Experience</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#projects"><span class="nav-index">03.</span> Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact"><span class="nav-index">04.</span> Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#data"><span class="nav-index">05.</span> Data</a>
-              </li>
-            </ul>
+          <div class="col-12 col-lg-6">
+            <div class="hero-art" aria-hidden="true">
+              <div class="hero-blob"></div>
 
-            <div class="sidebar-bottom">
-              <button id="themeToggle" type="button" class="btn btn-outline-light btn-sm theme-toggle-btn" aria-pressed="false">🌙 Dark</button>
-              <div class="social-links d-flex gap-2 mt-3">
-                <a href="#" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Laura Gurdak on GitHub">GitHub</a>
-                <a href="#" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Laura Gurdak on LinkedIn">LinkedIn</a>
-                <a href="#contact" class="btn btn-outline-light btn-sm rounded-pill" aria-label="Contact Laura Gurdak">Email</a>
+              <svg class="deco deco-float" style="width:54px;height:54px; top:2%; left:4%;" viewBox="0 0 54 54"><circle cx="27" cy="27" r="24" fill="none" stroke="var(--peach)" stroke-width="4"/></svg>
+              <div class="deco" style="width:14px;height:14px; top:12%; right:6%; background-color:var(--blush); border-radius:50%;"></div>
+              <svg class="deco deco-float" style="top:82%; left:0%;" width="40" height="36" viewBox="0 0 40 36"><path d="M20 2 L38 33 L2 33 Z" fill="none" stroke="var(--lavender)" stroke-width="3.5" stroke-linejoin="round"/></svg>
+              <svg class="deco" style="bottom:6%; right:2%;" width="70" height="24" viewBox="0 0 70 24"><path d="M2 18 C 12 4, 22 4, 32 18 S 52 32, 62 18" fill="none" stroke="var(--mint-ink)" stroke-width="3.5" stroke-linecap="round"/></svg>
+              <div class="deco deco-float" style="width:10px;height:10px; bottom:32%; left:-2%; background-color:var(--butter); border-radius:50%;"></div>
+
+              <div class="hero-browser">
+                <div class="hero-browser__chrome"><i></i><i></i><i></i></div>
+                <div class="hero-browser__body">
+                  <div class="hero-bars"><i></i><i></i><i></i><i></i><i></i></div>
+                  <div class="hero-lines"><span></span><span></span></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </section>
 
-    <main id="main-content" class="site-main">
-      <!-- About: intro card + placeholder highlight cards -->
-      <section id="about" class="content-section" aria-labelledby="aboutHeading">
-        <h2 id="aboutHeading" class="section-title"><span class="section-number">01.</span>About</h2>
+    <!-- About: intro card + highlight cards -->
+    <section id="about" class="content-section" aria-labelledby="aboutHeading">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">About</span>
+          <h2 id="aboutHeading" class="section-title">A few things I bring to the table</h2>
+        </div>
 
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-8 col-lg-9">
-            <div class="card profile-card shadow text-center text-lg-start p-4">
+        <div class="row justify-content-center mb-4">
+          <div class="col-12 col-lg-10">
+            <div class="card profile-card p-4">
               <div class="card-body d-lg-flex align-items-center gap-4">
                 <figure class="mb-3 mb-lg-0 flex-shrink-0">
                   <img src="images/avatar.svg" alt="Placeholder portrait illustration of Laura Gurdak" class="profile-card__avatar rounded-circle img-fluid mx-auto d-block" />
@@ -79,11 +116,11 @@
                     operational problem-solving. When I'm not writing code, I'm probably logging hours toward
                     my pilot's license in a 1956 Cessna 172.
                   </p>
-                  <div class="d-flex justify-content-center justify-content-lg-start gap-2 flex-wrap">
-                    <span class="badge text-bg-secondary">Python</span>
-                    <span class="badge text-bg-secondary">SQL</span>
-                    <span class="badge text-bg-secondary">React</span>
-                    <span class="badge text-bg-secondary">Tableau</span>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="chip chip-lilac">Python</span>
+                    <span class="chip chip-mint">SQL</span>
+                    <span class="chip chip-aqua">React</span>
+                    <span class="chip chip-butter">Tableau</span>
                   </div>
                 </div>
               </div>
@@ -91,31 +128,98 @@
           </div>
         </div>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
-            <div class="p-4 h-100 highlight-box">
-              <h3 class="h5">Full-Stack API Integrations</h3>
-              <p class="mb-0">Engineered REST and GraphQL integrations connecting BigCommerce, WooCommerce, Square, and Shopify to a centralized vendor portal at Myti.</p>
+            <div class="feature-card">
+              <div class="feature-card__corner" style="background: var(--grad-lav-mint);"></div>
+              <div class="feature-card__icon" style="background-color: var(--lilac);">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="2" y="4" width="22" height="18" rx="4" stroke="var(--lavender-ink)" stroke-width="2"/><path d="M2 9h22" stroke="var(--lavender-ink)" stroke-width="2"/><circle cx="6" cy="6.5" r="1" fill="var(--lavender-ink)"/><path d="M8 15l3 2-3 2M14 19h4" stroke="var(--lavender-ink)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Full-stack API integrations</h3>
+              <p>Engineered REST and GraphQL integrations connecting BigCommerce, WooCommerce, Square, and Shopify to a centralized vendor portal.</p>
             </div>
           </div>
           <div class="col">
-            <div class="p-4 h-100 highlight-box">
-              <h3 class="h5">Data-Driven Decisions</h3>
-              <p class="mb-0">Built sales, order, and sync-health dashboards for investor reporting — grounded in years of analyzing revenue trends to run my own business.</p>
+            <div class="feature-card">
+              <div class="feature-card__corner" style="background: var(--grad-peach-pink);"></div>
+              <div class="feature-card__icon" style="background-color: var(--peach);">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="2" y="2" width="22" height="22" rx="5" stroke="var(--peach-ink)" stroke-width="2"/><path d="M7 17V11M13 17V7M19 17v-5" stroke="var(--peach-ink)" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <h3>Data-driven decisions</h3>
+              <p>Built sales, order, and sync-health dashboards for investor reporting, grounded in years of analyzing revenue trends to run my own business.</p>
             </div>
           </div>
           <div class="col">
-            <div class="p-4 h-100 highlight-box">
-              <h3 class="h5">AI-Assisted Development</h3>
-              <p class="mb-0">Proficient with Claude Code and Cursor to accelerate development velocity and support AI-assisted code review in an agile workflow.</p>
+            <div class="feature-card">
+              <div class="feature-card__corner" style="background: var(--grad-aqua-lav);"></div>
+              <div class="feature-card__icon" style="background-color: var(--aqua);">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 2l2.4 6.6L22 11l-6.6 2.4L13 20l-2.4-6.6L4 11l6.6-2.4L13 2z" stroke="var(--aqua-ink)" stroke-width="2" stroke-linejoin="round"/><circle cx="21" cy="21" r="2" fill="var(--aqua-ink)"/></svg>
+              </div>
+              <h3>AI-assisted development</h3>
+              <p>Comfortable with Claude Code and Cursor to move faster and support AI-assisted code review in an agile workflow.</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Experience: work history, education, and skills -->
-      <section id="experience" class="content-section" aria-labelledby="experienceHeading">
-        <h2 id="experienceHeading" class="section-title"><span class="section-number">02.</span>Experience</h2>
+    <!-- Services: illustrated tiles -->
+    <section id="services" class="content-section" aria-labelledby="servicesHeading">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Services</span>
+          <h2 id="servicesHeading" class="section-title">What I can help build</h2>
+          <p>The areas I've worked in most, from internship projects to running my own storefront.</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <figure class="service-tile m-0">
+              <img src="images/services1.jpg" alt="Illustration of a browser window with a code editor and layout blocks, representing web development" class="img-fluid" loading="lazy" />
+              <figcaption>Building responsive, accessible interfaces from the ground up.</figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="service-tile m-0">
+              <img src="images/services2.jpg" alt="Illustration of a desktop computer displaying a shopping cart icon, representing e-commerce set up" class="img-fluid" loading="lazy" />
+              <figcaption>Getting new storefronts live and ready to sell.</figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="service-tile m-0">
+              <img src="images/services3.jpg" alt="Illustration of a shopping cart connected to Shopify, PayPal, email, and shipping icons, representing e-commerce integration" class="img-fluid" loading="lazy" />
+              <figcaption>Connecting platforms like Shopify, Square, and PayPal into one system.</figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="service-tile m-0">
+              <img src="images/services4.jpg" alt="Illustration of a dashboard with sales totals, order counts, and a trend chart, representing e-commerce management" class="img-fluid" loading="lazy" />
+              <figcaption>Dashboards that turn daily sales data into clear decisions.</figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="service-tile m-0">
+              <img src="images/services5.jpg" alt="Illustration of a friendly robot assistant on a computer screen, representing AI integration" class="img-fluid" loading="lazy" />
+              <figcaption>Using tools like Claude Code and Cursor to build faster.</figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="service-tile m-0">
+              <img src="images/services6.jpg" alt="Illustration of a database connected to data tables, representing database management" class="img-fluid" loading="lazy" />
+              <figcaption>Structuring and maintaining reliable data layers with Supabase and SQL.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience: work history, education, and skills -->
+    <section id="experience" class="content-section" aria-labelledby="experienceHeading">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Experience</span>
+          <h2 id="experienceHeading" class="section-title">Where I've worked</h2>
+        </div>
 
         <div class="mb-5">
           <h3 class="h5 mb-3">Work History</h3>
@@ -123,7 +227,7 @@
             <div class="accordion-item">
               <h4 class="accordion-header" id="exp1Heading">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#exp1Collapse" aria-expanded="true" aria-controls="exp1Collapse">
-                  Software Development Intern / Full Stack Builder Intern — Myti (Dec 2025 – Present)
+                  Software Development Intern / Full Stack Builder Intern, Myti (Dec 2025 &ndash; Present)
                 </button>
               </h4>
               <div id="exp1Collapse" class="accordion-collapse collapse show" role="region" aria-labelledby="exp1Heading" data-bs-parent="#experienceAccordion">
@@ -135,7 +239,7 @@
                     <li>Developed sales, order, and sync-health dashboards surfacing key e-commerce metrics for data-driven decisions and investor reporting.</li>
                     <li>Managed version control and feature branching workflows using GitHub in a collaborative team environment.</li>
                     <li>Deployed and maintained web applications via Vercel, ensuring reliable production environments.</li>
-                    <li>Leveraged AI-assisted development tools (Claude Code, Cursor) to accelerate development velocity and improve code quality.</li>
+                    <li>Used AI-assisted development tools (Claude Code, Cursor) to speed up development and improve code quality.</li>
                     <li>Coordinated cross-functional tasks and sprint tracking using Linear, Monday.com, and Slack in an agile workflow.</li>
                   </ul>
                 </div>
@@ -144,7 +248,7 @@
             <div class="accordion-item">
               <h4 class="accordion-header" id="exp2Heading">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp2Collapse" aria-expanded="false" aria-controls="exp2Collapse">
-                  Owner &amp; Operator — Hinesburg Hair Studio / Falls Rd Hair (2015 – Present)
+                  Owner &amp; Operator, Hinesburg Hair Studio / Falls Rd Hair (2015 &ndash; Present)
                 </button>
               </h4>
               <div id="exp2Collapse" class="accordion-collapse collapse" role="region" aria-labelledby="exp2Heading" data-bs-parent="#experienceAccordion">
@@ -160,7 +264,7 @@
             <div class="accordion-item">
               <h4 class="accordion-header" id="exp3Heading">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp3Collapse" aria-expanded="false" aria-controls="exp3Collapse">
-                  President — Hinesburg Business and Professionals Association (2019 – 2022)
+                  President, Hinesburg Business and Professionals Association (2019 &ndash; 2022)
                 </button>
               </h4>
               <div id="exp3Collapse" class="accordion-collapse collapse" role="region" aria-labelledby="exp3Heading" data-bs-parent="#experienceAccordion">
@@ -182,14 +286,14 @@
             <div class="accordion-item">
               <h4 class="accordion-header" id="edu1Heading">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#edu1Collapse" aria-expanded="true" aria-controls="edu1Collapse">
-                  AS, Data Science — Champlain College (Expected August 2026)
+                  AS, Data Science, Champlain College (Expected August 2026)
                 </button>
               </h4>
               <div id="edu1Collapse" class="accordion-collapse collapse show" role="region" aria-labelledby="edu1Heading" data-bs-parent="#educationAccordion">
                 <div class="accordion-body">
                   <ul class="mb-2">
                     <li>Member, Alpha Sigma Lambda National Honor Society</li>
-                    <li>President's List, 2025–2026</li>
+                    <li>President's List, 2025&ndash;2026</li>
                     <li>Trustees' List, 2026</li>
                   </ul>
                   <p class="mb-0">View honors on <a href="https://meritpages.com/lauragurdak" target="_blank" rel="noopener noreferrer">MeritPages</a>.</p>
@@ -199,7 +303,7 @@
             <div class="accordion-item">
               <h4 class="accordion-header" id="edu2Heading">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#edu2Collapse" aria-expanded="false" aria-controls="edu2Collapse">
-                  Certificate, Software Development — Champlain College (Expected August 2026)
+                  Certificate, Software Development, Champlain College (Expected August 2026)
                 </button>
               </h4>
               <div id="edu2Collapse" class="accordion-collapse collapse" role="region" aria-labelledby="edu2Heading" data-bs-parent="#educationAccordion">
@@ -211,13 +315,13 @@
             <div class="accordion-item">
               <h4 class="accordion-header" id="edu3Heading">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#edu3Collapse" aria-expanded="false" aria-controls="edu3Collapse">
-                  Software Engineering Coursework — Vermont State University (2024 – 2025)
+                  Software Engineering Coursework, Vermont State University (2024 &ndash; 2025)
                 </button>
               </h4>
               <div id="edu3Collapse" class="accordion-collapse collapse" role="region" aria-labelledby="edu3Heading" data-bs-parent="#educationAccordion">
                 <div class="accordion-body">
                   <ul class="mb-0">
-                    <li>President's List, 2024–2025</li>
+                    <li>President's List, 2024&ndash;2025</li>
                   </ul>
                 </div>
               </div>
@@ -225,13 +329,13 @@
             <div class="accordion-item">
               <h4 class="accordion-header" id="edu4Heading">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#edu4Collapse" aria-expanded="false" aria-controls="edu4Collapse">
-                  AAS, Business Technology and Management — Vermont Technical College (2003 – 2007)
+                  AAS, Business Technology and Management, Vermont Technical College (2003 &ndash; 2007)
                 </button>
               </h4>
               <div id="edu4Collapse" class="accordion-collapse collapse" role="region" aria-labelledby="edu4Heading" data-bs-parent="#educationAccordion">
                 <div class="accordion-body">
                   <ul class="mb-0">
-                    <li>Dean's List, 2005–2007</li>
+                    <li>Dean's List, 2005&ndash;2007</li>
                   </ul>
                 </div>
               </div>
@@ -245,72 +349,77 @@
             <div class="col">
               <h4 class="h6 text-uppercase skill-group-label mb-2">Languages</h4>
               <div class="d-flex flex-wrap gap-2">
-                <span class="badge text-bg-secondary">Python</span>
-                <span class="badge text-bg-secondary">SQL</span>
-                <span class="badge text-bg-secondary">R</span>
-                <span class="badge text-bg-secondary">TypeScript</span>
-                <span class="badge text-bg-secondary">JavaScript</span>
+                <span class="chip chip-lilac">Python</span>
+                <span class="chip chip-lilac">SQL</span>
+                <span class="chip chip-lilac">R</span>
+                <span class="chip chip-lilac">TypeScript</span>
+                <span class="chip chip-lilac">JavaScript</span>
               </div>
             </div>
             <div class="col">
               <h4 class="h6 text-uppercase skill-group-label mb-2">Libraries &amp; Frameworks</h4>
               <div class="d-flex flex-wrap gap-2">
-                <span class="badge text-bg-secondary">NumPy</span>
-                <span class="badge text-bg-secondary">Pandas</span>
-                <span class="badge text-bg-secondary">Scikit-learn</span>
-                <span class="badge text-bg-secondary">React</span>
+                <span class="chip chip-mint">NumPy</span>
+                <span class="chip chip-mint">Pandas</span>
+                <span class="chip chip-mint">Scikit-learn</span>
+                <span class="chip chip-mint">React</span>
               </div>
             </div>
             <div class="col">
               <h4 class="h6 text-uppercase skill-group-label mb-2">Data &amp; Analytics</h4>
               <div class="d-flex flex-wrap gap-2">
-                <span class="badge text-bg-secondary">Tableau</span>
-                <span class="badge text-bg-secondary">ggplot2</span>
-                <span class="badge text-bg-secondary">Matplotlib</span>
-                <span class="badge text-bg-secondary">Regression</span>
-                <span class="badge text-bg-secondary">K-Means</span>
-                <span class="badge text-bg-secondary">Decision Trees</span>
-                <span class="badge text-bg-secondary">PCA</span>
+                <span class="chip chip-aqua">Tableau</span>
+                <span class="chip chip-aqua">ggplot2</span>
+                <span class="chip chip-aqua">Matplotlib</span>
+                <span class="chip chip-aqua">Regression</span>
+                <span class="chip chip-aqua">K-Means</span>
+                <span class="chip chip-aqua">Decision Trees</span>
+                <span class="chip chip-aqua">PCA</span>
               </div>
             </div>
             <div class="col">
               <h4 class="h6 text-uppercase skill-group-label mb-2">Databases</h4>
               <div class="d-flex flex-wrap gap-2">
-                <span class="badge text-bg-secondary">Supabase</span>
-                <span class="badge text-bg-secondary">SQL Server</span>
-                <span class="badge text-bg-secondary">PostgreSQL</span>
+                <span class="chip chip-blush">Supabase</span>
+                <span class="chip chip-blush">SQL Server</span>
+                <span class="chip chip-blush">PostgreSQL</span>
               </div>
             </div>
             <div class="col">
               <h4 class="h6 text-uppercase skill-group-label mb-2">APIs &amp; Integration</h4>
               <div class="d-flex flex-wrap gap-2">
-                <span class="badge text-bg-secondary">REST</span>
-                <span class="badge text-bg-secondary">GraphQL</span>
-                <span class="badge text-bg-secondary">BigCommerce API</span>
-                <span class="badge text-bg-secondary">Shopify API</span>
-                <span class="badge text-bg-secondary">Square API</span>
-                <span class="badge text-bg-secondary">WooCommerce API</span>
+                <span class="chip chip-peach">REST</span>
+                <span class="chip chip-peach">GraphQL</span>
+                <span class="chip chip-peach">BigCommerce API</span>
+                <span class="chip chip-peach">Shopify API</span>
+                <span class="chip chip-peach">Square API</span>
+                <span class="chip chip-peach">WooCommerce API</span>
               </div>
             </div>
             <div class="col">
               <h4 class="h6 text-uppercase skill-group-label mb-2">Tools &amp; Platforms</h4>
               <div class="d-flex flex-wrap gap-2">
-                <span class="badge text-bg-secondary">GitHub</span>
-                <span class="badge text-bg-secondary">Vercel</span>
-                <span class="badge text-bg-secondary">Jupyter</span>
-                <span class="badge text-bg-secondary">PyCharm</span>
-                <span class="badge text-bg-secondary">RStudio</span>
-                <span class="badge text-bg-secondary">Claude Code</span>
-                <span class="badge text-bg-secondary">Cursor</span>
+                <span class="chip chip-butter">GitHub</span>
+                <span class="chip chip-butter">Vercel</span>
+                <span class="chip chip-butter">Jupyter</span>
+                <span class="chip chip-butter">PyCharm</span>
+                <span class="chip chip-butter">RStudio</span>
+                <span class="chip chip-butter">Claude Code</span>
+                <span class="chip chip-butter">Cursor</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Projects: filterable portfolio grid -->
-      <section id="projects" class="content-section" aria-labelledby="projectsHeading">
-        <h2 id="projectsHeading" class="section-title"><span class="section-number">03.</span>Projects</h2>
+    <!-- Projects: filterable portfolio grid -->
+    <section id="projects" class="content-section" aria-labelledby="projectsHeading">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Projects</span>
+          <h2 id="projectsHeading" class="section-title">Recent work</h2>
+        </div>
 
         <div class="filter-bar btn-group mb-4 flex-wrap" role="group" aria-label="Filter projects by category">
           <button type="button" class="btn active" data-filter="all" aria-pressed="true">All</button>
@@ -360,16 +469,21 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Data: embedded Tableau Public dashboard -->
-      <section id="data" class="content-section" aria-labelledby="dataHeading">
-        <h2 id="dataHeading" class="section-title"><span class="section-number">05.</span>Data</h2>
-        <p class="mb-4">
-          An interactive Tableau dashboard analyzing FAA wildlife strike reports across U.S. aviation.
-          Pan, filter, and drill into the visualization below, or
-          <a href="https://public.tableau.com/views/FAAWildlifeStrikesinAviationU_S_Analysis/Dashboard1" target="_blank" rel="noopener noreferrer">open it on Tableau Public</a>.
-        </p>
+    <!-- Data: embedded Tableau Public dashboard -->
+    <section id="data" class="content-section" aria-labelledby="dataHeading">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Data</span>
+          <h2 id="dataHeading" class="section-title">FAA wildlife strikes analysis</h2>
+          <p>
+            An interactive Tableau dashboard analyzing FAA wildlife strike reports across U.S. aviation.
+            Pan, filter, and drill into the visualization below, or
+            <a href="https://public.tableau.com/views/FAAWildlifeStrikesinAviationU_S_Analysis/Dashboard1" target="_blank" rel="noopener noreferrer">open it on Tableau Public</a>.
+          </p>
+        </div>
         <figure class="tableau-embed mb-0">
           <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
           <tableau-viz
@@ -389,16 +503,21 @@
             "FAA Wildlife Strikes in Aviation (U.S.) Analysis," built and published by Laura Gurdak on Tableau Public.
           </figcaption>
         </figure>
-      </section>
+      </div>
+    </section>
 
-      <!-- Contact: validated form + alternate contact methods -->
-      <section id="contact" class="content-section" aria-labelledby="contactHeading">
-        <h2 id="contactHeading" class="section-title"><span class="section-number">04.</span>Contact</h2>
+    <!-- Contact: validated form + alternate contact methods -->
+    <section id="contact" class="content-section" aria-labelledby="contactHeading">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Contact</span>
+          <h2 id="contactHeading" class="section-title">Let's talk</h2>
+        </div>
 
         <div class="row">
           <div class="col-12 col-lg-7">
             <div id="formSuccess" class="alert alert-success d-none" role="alert">
-              Thanks for reaching out! This is a placeholder confirmation — no message was actually sent
+              Thanks for reaching out! This is a placeholder confirmation, no message was actually sent
               because the form isn't connected to a backend yet.
             </div>
 
@@ -418,7 +537,7 @@
                 <textarea class="form-control" id="contactMessage" name="message" rows="5" required></textarea>
                 <div class="invalid-feedback">Please enter a message.</div>
               </div>
-              <button type="submit" class="btn btn-dark">Send Message</button>
+              <button type="submit" class="btn btn-gradient">Send Message</button>
             </form>
           </div>
 
@@ -429,18 +548,18 @@
               <li class="mb-2">Location: Shelburne, VT</li>
             </ul>
             <div class="social-links d-flex gap-2 mt-3">
-              <a href="#" class="btn btn-outline-theme btn-sm rounded-pill" aria-label="Laura Gurdak on GitHub">GitHub</a>
-              <a href="#" class="btn btn-outline-theme btn-sm rounded-pill" aria-label="Laura Gurdak on LinkedIn">LinkedIn</a>
+              <a href="#" class="btn" aria-label="Laura Gurdak on GitHub">GH</a>
+              <a href="#" class="btn" aria-label="Laura Gurdak on LinkedIn">in</a>
             </div>
           </div>
         </div>
-      </section>
 
-      <footer class="site-footer-inline">
-        <p class="mb-0 small">&copy; 2026 Laura Gurdak. Built with HTML, CSS, JavaScript &amp; Bootstrap.</p>
-      </footer>
-    </main>
-  </div>
+        <footer class="site-footer-inline">
+          <p class="mb-0 small">&copy; 2026 Laura Gurdak. Built with HTML, CSS, JavaScript &amp; Bootstrap.</p>
+        </footer>
+      </div>
+    </section>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
