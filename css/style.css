@@ -687,6 +687,62 @@ h1, h2, h3, h4 {
   background-color: var(--white);
 }
 
+/* Email/phone warn on their own, no JS: :not(:placeholder-shown) skips
+   empty fields, :not(:focus) waits until the user has left the field */
+#contactEmail:not(:placeholder-shown):not(:focus):invalid,
+#contactPhone:not(:placeholder-shown):not(:focus):invalid {
+  border-color: var(--blush-ink);
+}
+
+#contactEmail:not(:placeholder-shown):not(:focus):invalid ~ .invalid-feedback,
+#contactPhone:not(:placeholder-shown):not(:focus):invalid ~ .invalid-feedback {
+  display: block;
+}
+
+#contactEmail:not(:placeholder-shown):valid,
+#contactPhone:not(:placeholder-shown):valid {
+  border-color: var(--mint-ink);
+}
+
+.contact-form .form-select {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background-color: var(--cream);
+  color: var(--charcoal);
+}
+
+.contact-form .form-select:focus {
+  border-color: var(--lavender);
+  box-shadow: 0 0 0 3px var(--lilac);
+  background-color: var(--white);
+}
+
+.contact-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-form legend {
+  float: none;
+  width: auto;
+}
+
+.contact-form .form-check-input {
+  accent-color: var(--lavender);
+}
+
+.contact-form .required-tag {
+  color: var(--blush-ink);
+}
+
+.contact-form .optional-tag,
+.contact-form .form-hint {
+  color: var(--ink-soft);
+  font-weight: 400;
+  font-size: 0.82rem;
+}
+
 .site-footer-inline {
   border-top: 1px solid var(--border);
   margin-top: 2rem;

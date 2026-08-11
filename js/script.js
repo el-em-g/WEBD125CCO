@@ -49,25 +49,59 @@
     });
   });
 
-  /* Contact form validation (Bootstrap pattern) */
+  /* Contact form validation + submission (Bootstrap validation pattern,
+     submitted via fetch to a Formspree endpoint set in the form's
+     action attribute) */
   var forms = document.querySelectorAll(".needs-validation");
 
   Array.prototype.slice.call(forms).forEach(function (form) {
+    var successAlert = document.getElementById("formSuccess");
+    var errorAlert = document.getElementById("formError");
+    var submitBtn = form.querySelector('button[type="submit"]');
+
     form.addEventListener(
       "submit",
       function (event) {
         event.preventDefault();
         event.stopPropagation();
+        form.classList.add("was-validated");
 
-        if (form.checkValidity()) {
-          form.classList.add("d-none");
-          var successAlert = document.getElementById("formSuccess");
-          if (successAlert) {
-            successAlert.classList.remove("d-none");
-          }
+        if (successAlert) successAlert.classList.add("d-none");
+        if (errorAlert) errorAlert.classList.add("d-none");
+
+        if (!form.checkValidity()) {
+          return;
         }
 
-        form.classList.add("was-validated");
+        var originalBtnText = submitBtn ? submitBtn.textContent : "";
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Sending...";
+        }
+
+        fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        })
+          .then(function (response) {
+            if (response.ok) {
+              form.reset();
+              form.classList.remove("was-validated");
+              if (successAlert) successAlert.classList.remove("d-none");
+            } else if (errorAlert) {
+              errorAlert.classList.remove("d-none");
+            }
+          })
+          .catch(function () {
+            if (errorAlert) errorAlert.classList.remove("d-none");
+          })
+          .finally(function () {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalBtnText;
+            }
+          });
       },
       false
     );

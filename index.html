@@ -525,26 +525,80 @@
         <div class="row">
           <div class="col-12 col-lg-7">
             <div id="formSuccess" class="alert alert-success d-none" role="alert">
-              Thanks for reaching out! This is a placeholder confirmation, no message was actually sent
-              because the form isn't connected to a backend yet.
+              Thanks for reaching out! I'll get back to you soon.
+            </div>
+            <div id="formError" class="alert alert-danger d-none" role="alert">
+              Something went wrong sending your message. Try again, or email me directly at
+              <a href="mailto:Laura.Gurdak@gmail.com">Laura.Gurdak@gmail.com</a>.
             </div>
 
-            <form class="contact-form needs-validation shadow-sm" novalidate>
+            <!-- TODO: replace YOUR_FORM_ID with a real Formspree endpoint (see js/script.js) -->
+            <form class="contact-form needs-validation shadow-sm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+              <input type="text" name="_gotcha" class="d-none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <input type="hidden" name="_subject" value="New message from lauragurdak.com" />
+
               <div class="mb-3">
-                <label for="contactName" class="form-label">Name</label>
-                <input type="text" class="form-control" id="contactName" name="name" required />
+                <label for="contactName" class="form-label">Name <span class="required-tag">*</span></label>
+                <input type="text" class="form-control" id="contactName" name="name" placeholder="First Last" required />
                 <div class="invalid-feedback">Please enter your name.</div>
               </div>
+
               <div class="mb-3">
-                <label for="contactEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="contactEmail" name="email" required />
-                <div class="invalid-feedback">Please enter a valid email address.</div>
+                <label for="contactEmail" class="form-label">Email <span class="required-tag">*</span></label>
+                <input type="email" class="form-control" id="contactEmail" name="email" placeholder="email@example.com" required />
+                <div class="invalid-feedback">That's not a valid email address.</div>
               </div>
+
               <div class="mb-3">
-                <label for="contactMessage" class="form-label">Message</label>
+                <label for="contactPhone" class="form-label">Phone <span class="required-tag">*</span></label>
+                <input type="tel" class="form-control" id="contactPhone" name="phone" placeholder="555-123-4567" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+                <div class="form-hint">Format: 555-123-4567</div>
+                <div class="invalid-feedback">That's not a valid phone number. Use the format 555-123-4567.</div>
+              </div>
+
+              <fieldset class="mb-3">
+                <legend class="form-label h6">How would you like to be reached? <span class="form-hint">(select all that apply)</span></legend>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="contact-method" value="email" id="contactMethodEmail" />
+                  <label class="form-check-label" for="contactMethodEmail">Email</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="contact-method" value="phone" id="contactMethodPhone" />
+                  <label class="form-check-label" for="contactMethodPhone">Phone call</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="contact-method" value="text" id="contactMethodText" />
+                  <label class="form-check-label" for="contactMethodText">Text</label>
+                </div>
+              </fieldset>
+
+              <div class="mb-3">
+                <label for="projectType" class="form-label">What do you need help with? <span class="required-tag">*</span></label>
+                <select class="form-select" id="projectType" name="project-type" required>
+                  <option value="" selected disabled>Choose one...</option>
+                  <option value="hire-me">Hire Laura Gurdak</option>
+                  <option value="web-dev">Web Development</option>
+                  <option value="ecommerce-setup">E-Commerce Set-Up</option>
+                  <option value="ecommerce-integration">E-Commerce Integration</option>
+                  <option value="ecommerce-management">E-Commerce Management</option>
+                  <option value="ai-integration">AI Integration</option>
+                  <option value="database">Database Management</option>
+                  <option value="other">Other</option>
+                </select>
+                <div class="invalid-feedback">Please choose an option.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="contactMessage" class="form-label">Message <span class="required-tag">*</span></label>
                 <textarea class="form-control" id="contactMessage" name="message" rows="5" required></textarea>
                 <div class="invalid-feedback">Please enter a message.</div>
               </div>
+
+              <div class="mb-3">
+                <label for="contactCompany" class="form-label">Company <span class="optional-tag">(optional)</span></label>
+                <input type="text" class="form-control" id="contactCompany" name="company" />
+              </div>
+
               <button type="submit" class="btn btn-gradient">Send Message</button>
             </form>
           </div>
