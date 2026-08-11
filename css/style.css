@@ -1,6 +1,4 @@
-/* =========================================================
-   Fonts (self-hosted)
-   ========================================================= */
+/* self-hosted fonts, no external requests */
 @font-face {
   font-family: "Manrope";
   font-weight: 400 800;
@@ -17,9 +15,6 @@
   src: url("../fonts/spacegrotesk.woff2") format("woff2");
 }
 
-/* =========================================================
-   Variables & theme
-   ========================================================= */
 :root {
   --cream: #fff8ee;
   --white: #ffffff;
@@ -57,6 +52,7 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* dark theme just remaps the same tokens, components don't need to know */
 [data-bs-theme="dark"] {
   --cream: #201c2e;
   --white: #2a2438;
@@ -80,9 +76,6 @@
   --butter-ink: #fcf0c4;
 }
 
-/* =========================================================
-   Base
-   ========================================================= */
 html {
   scroll-behavior: smooth;
 }
@@ -140,11 +133,8 @@ h1, h2, h3, h4 {
   scroll-margin-top: 5.5rem;
 }
 
-/* =========================================================
-   Nav (glass, custom Bootstrap component)
-   Combines navbar, navbar-nav, navbar-collapse/navbar-toggler,
-   and btn classes into a sticky glass pill nav.
-   ========================================================= */
+/* Nav sits in its own wrapper so it can go sticky without dragging the
+   hero content up with it (negative margin gets the spacing back) */
 .nav-shell {
   position: sticky;
   top: 1rem;
@@ -157,10 +147,8 @@ h1, h2, h3, h4 {
   max-width: 68rem;
   margin: 0 auto;
   border-radius: var(--radius-lg);
-  background-color: color-mix(in srgb, var(--white) 72%, transparent);
-  backdrop-filter: blur(16px) saturate(1.4);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  background-color: var(--white);
+  border: 1px solid var(--border);
   box-shadow: 0 8px 30px rgba(47, 47, 56, 0.06);
   padding: 0.5rem 0.5rem 0.5rem 1.1rem;
 }
@@ -238,9 +226,8 @@ h1, h2, h3, h4 {
   }
 }
 
-/* =========================================================
-   Buttons
-   ========================================================= */
+/* buttons */
+
 .btn-gradient {
   background: var(--grad-lav-mint);
   color: #2a1f45;
@@ -272,9 +259,8 @@ h1, h2, h3, h4 {
   color: var(--charcoal);
 }
 
-/* =========================================================
-   Hero
-   ========================================================= */
+/* ---- hero ---- */
+
 .hero {
   position: relative;
   padding: 9rem 0 4rem;
@@ -357,88 +343,47 @@ h1, h2, h3, h4 {
 .hero-art {
   position: relative;
   height: 24rem;
+  display: grid;
+  place-items: center;
 }
 
-.hero-blob {
+/* Portrait stack: two flat rotated cards behind the photo frame,
+   like paper cutouts fanned out. Deliberately not a soft blur blob. */
+.hero-portrait-stack {
+  position: relative;
+  width: 16rem;
+}
+
+.hero-portrait-panel {
   position: absolute;
-  inset: 8% 4%;
-  border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%;
-  background: var(--grad-aqua-lav);
-  opacity: 0.55;
-  animation: blobmove 14s ease-in-out infinite;
+  inset: 0;
+  border-radius: 28px;
 }
 
-@keyframes blobmove {
-  0%, 100% { border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%; }
-  50% { border-radius: 58% 42% 40% 60% / 55% 60% 40% 45%; }
+.hero-portrait-panel--back {
+  background-color: var(--mint);
+  transform: rotate(-7deg);
 }
 
-.hero-browser {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 88%;
+.hero-portrait-panel--mid {
+  background-color: var(--peach);
+  transform: rotate(5deg);
+}
+
+.hero-portrait-frame {
+  position: relative;
   background-color: var(--white);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  box-shadow: 0 30px 60px -20px rgba(47, 47, 56, 0.22);
-  overflow: hidden;
+  border-radius: 28px;
+  padding: 0.55rem;
+  box-shadow: 0 24px 48px -22px rgba(47, 47, 56, 0.3);
 }
 
-.hero-browser__chrome {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.7rem 0.9rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.hero-browser__chrome i {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
+.hero-portrait-frame img {
   display: block;
+  width: 100%;
+  border-radius: 22px;
 }
-
-.hero-browser__chrome i:nth-child(1) { background-color: var(--blush); }
-.hero-browser__chrome i:nth-child(2) { background-color: var(--butter); }
-.hero-browser__chrome i:nth-child(3) { background-color: var(--mint); }
-
-.hero-browser__body {
-  padding: 1.1rem 1.1rem 1.3rem;
-}
-
-.hero-bars {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.5rem;
-  height: 5.5rem;
-  margin-bottom: 0.9rem;
-}
-
-.hero-bars i {
-  flex: 1;
-  border-radius: 6px 6px 2px 2px;
-  display: block;
-}
-
-.hero-bars i:nth-child(1) { height: 55%; background-color: var(--lilac); }
-.hero-bars i:nth-child(2) { height: 85%; background-color: var(--lavender); }
-.hero-bars i:nth-child(3) { height: 40%; background-color: var(--mint); }
-.hero-bars i:nth-child(4) { height: 70%; background-color: var(--aqua); }
-.hero-bars i:nth-child(5) { height: 30%; background-color: var(--peach); }
-
-.hero-lines span {
-  display: block;
-  height: 8px;
-  border-radius: 5px;
-  background-color: var(--border);
-  margin-bottom: 0.5rem;
-}
-
-.hero-lines span:nth-child(1) { width: 70%; }
-.hero-lines span:nth-child(2) { width: 45%; margin-bottom: 0; }
 
 .deco {
   position: absolute;
@@ -455,7 +400,6 @@ h1, h2, h3, h4 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-blob,
   .deco-float {
     animation: none;
   }
@@ -463,16 +407,17 @@ h1, h2, h3, h4 {
 
 @media (max-width: 991.98px) {
   .hero-art {
-    height: 18rem;
+    height: 20rem;
     margin-top: 2rem;
+  }
+
+  .hero-portrait-stack {
+    width: 13rem;
   }
 }
 
-/* =========================================================
-   Profile card (About)
-   Combines Bootstrap's card, rounded-circle, and badge classes
-   into a bio card, restyled with thin outlines over shadows.
-   ========================================================= */
+/* About bio card. Same card/rounded-circle/badge combo as the Bootstrap
+   docs example, just restyled with a thin border instead of a shadow. */
 .profile-card {
   background-color: var(--white);
   border: 1px solid var(--border);
@@ -493,9 +438,7 @@ h1, h2, h3, h4 {
   border: 4px solid var(--lilac);
 }
 
-/* =========================================================
-   Highlight / feature cards
-   ========================================================= */
+/* feature / highlight cards */
 .feature-card {
   position: relative;
   background-color: var(--white);
@@ -550,9 +493,7 @@ h1, h2, h3, h4 {
   z-index: 1;
 }
 
-/* =========================================================
-   Services (illustrated tiles)
-   ========================================================= */
+/* Services grid, tiles are illustrated jpgs so the card just frames them */
 .service-tile {
   background-color: var(--white);
   border: 1px solid var(--border);
@@ -581,9 +522,7 @@ h1, h2, h3, h4 {
   border-top: 1px solid var(--border);
 }
 
-/* =========================================================
-   Experience (accordion)
-   ========================================================= */
+/* accordion (Experience) */
 .accordion-item {
   background-color: var(--white);
   border: 1px solid var(--border) !important;
@@ -609,13 +548,12 @@ h1, h2, h3, h4 {
   box-shadow: 0 0 0 3px var(--lilac);
 }
 
+/* Bootstrap's default caret is a dark PNG-style filter; drop it so the
+   caret picks up the button's own text color instead */
 .accordion-button::after {
   filter: none;
 }
 
-/* =========================================================
-   Skills (chip tags)
-   ========================================================= */
 .skill-group-label {
   color: var(--ink-soft);
   font-size: 0.78rem;
@@ -643,9 +581,6 @@ h1, h2, h3, h4 {
 .chip-peach { background-color: var(--peach); color: var(--peach-ink); }
 .chip-butter { background-color: var(--butter); color: var(--butter-ink); }
 
-/* =========================================================
-   Projects
-   ========================================================= */
 .project-card {
   background-color: var(--white);
   border: 1px solid var(--border);
@@ -680,9 +615,8 @@ h1, h2, h3, h4 {
   border-color: var(--lilac);
 }
 
-/* =========================================================
-   Data (Tableau embed)
-   ========================================================= */
+/* Tableau's own web component handles its internal styling, this is
+   just the card frame around it */
 .tableau-embed {
   background-color: var(--white);
   border: 1px solid var(--border);
@@ -695,9 +629,6 @@ h1, h2, h3, h4 {
   color: var(--ink-soft);
 }
 
-/* =========================================================
-   Contact
-   ========================================================= */
 .contact-form {
   background-color: var(--white);
   border: 1px solid var(--border);
@@ -718,9 +649,6 @@ h1, h2, h3, h4 {
   background-color: var(--white);
 }
 
-/* =========================================================
-   Footer
-   ========================================================= */
 .site-footer-inline {
   border-top: 1px solid var(--border);
   margin-top: 2rem;

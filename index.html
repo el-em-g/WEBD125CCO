@@ -14,7 +14,7 @@
 <body data-bs-spy="scroll" data-bs-target="#primaryNav" data-bs-offset="120" tabindex="0">
   <a class="visually-hidden-focusable btn btn-dark position-absolute top-0 start-0 m-2" href="#main-content">Skip to main content</a>
 
-  <!-- Sticky glass nav: custom Bootstrap component combining navbar, navbar-nav,
+  <!-- sticky nav: custom Bootstrap component combining navbar, navbar-nav,
        collapse/navbar-toggler, and btn classes into one persistent site-wide nav -->
   <div class="nav-shell">
     <nav class="navbar navbar-expand-lg site-nav" aria-label="Main navigation">
@@ -72,20 +72,18 @@
           </div>
 
           <div class="col-12 col-lg-6">
-            <div class="hero-art" aria-hidden="true">
-              <div class="hero-blob"></div>
+            <div class="hero-art">
+              <svg class="deco deco-float" style="width:54px;height:54px; top:2%; left:4%;" viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="24" fill="none" stroke="var(--peach)" stroke-width="4"/></svg>
+              <div class="deco" style="width:14px;height:14px; top:12%; right:6%; background-color:var(--blush); border-radius:50%;" aria-hidden="true"></div>
+              <svg class="deco deco-float" style="top:82%; left:0%;" width="40" height="36" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 2 L38 33 L2 33 Z" fill="none" stroke="var(--lavender)" stroke-width="3.5" stroke-linejoin="round"/></svg>
+              <svg class="deco" style="bottom:6%; right:2%;" width="70" height="24" viewBox="0 0 70 24" aria-hidden="true"><path d="M2 18 C 12 4, 22 4, 32 18 S 52 32, 62 18" fill="none" stroke="var(--mint-ink)" stroke-width="3.5" stroke-linecap="round"/></svg>
+              <div class="deco deco-float" style="width:10px;height:10px; bottom:32%; left:-2%; background-color:var(--butter); border-radius:50%;" aria-hidden="true"></div>
 
-              <svg class="deco deco-float" style="width:54px;height:54px; top:2%; left:4%;" viewBox="0 0 54 54"><circle cx="27" cy="27" r="24" fill="none" stroke="var(--peach)" stroke-width="4"/></svg>
-              <div class="deco" style="width:14px;height:14px; top:12%; right:6%; background-color:var(--blush); border-radius:50%;"></div>
-              <svg class="deco deco-float" style="top:82%; left:0%;" width="40" height="36" viewBox="0 0 40 36"><path d="M20 2 L38 33 L2 33 Z" fill="none" stroke="var(--lavender)" stroke-width="3.5" stroke-linejoin="round"/></svg>
-              <svg class="deco" style="bottom:6%; right:2%;" width="70" height="24" viewBox="0 0 70 24"><path d="M2 18 C 12 4, 22 4, 32 18 S 52 32, 62 18" fill="none" stroke="var(--mint-ink)" stroke-width="3.5" stroke-linecap="round"/></svg>
-              <div class="deco deco-float" style="width:10px;height:10px; bottom:32%; left:-2%; background-color:var(--butter); border-radius:50%;"></div>
-
-              <div class="hero-browser">
-                <div class="hero-browser__chrome"><i></i><i></i><i></i></div>
-                <div class="hero-browser__body">
-                  <div class="hero-bars"><i></i><i></i><i></i><i></i><i></i></div>
-                  <div class="hero-lines"><span></span><span></span></div>
+              <div class="hero-portrait-stack">
+                <div class="hero-portrait-panel hero-portrait-panel--back" aria-hidden="true"></div>
+                <div class="hero-portrait-panel hero-portrait-panel--mid" aria-hidden="true"></div>
+                <div class="hero-portrait-frame">
+                  <img src="images/avatar.png" alt="" width="480" height="480" />
                 </div>
               </div>
             </div>
@@ -556,8 +554,8 @@
               <li class="mb-2">Location: Shelburne, VT</li>
             </ul>
             <div class="social-links d-flex gap-2 mt-3">
-              <a href="#" class="btn" aria-label="Laura Gurdak on GitHub">GH</a>
-              <a href="#" class="btn" aria-label="Laura Gurdak on LinkedIn">in</a>
+              <a href="https://github.com/el-em-g" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Laura Gurdak on GitHub">GH</a>
+              <a href="https://www.linkedin.com/in/laura-gurdak-lmg" target="_blank" rel="noopener noreferrer" class="btn" aria-label="Laura Gurdak on LinkedIn">in</a>
             </div>
           </div>
         </div>
