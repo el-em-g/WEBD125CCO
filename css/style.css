@@ -638,6 +638,24 @@ h1, h2, h3, h4 {
   border-bottom: 1px solid var(--border);
 }
 
+/* real company logo, shown centered/contained instead of stretched
+   edge to edge like the placeholder thumbnails */
+.project-thumb-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 400 / 240;
+  background-color: var(--cream);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-thumb-logo img {
+  width: auto;
+  max-width: 45%;
+  max-height: 65%;
+  border-bottom: none;
+}
+
 .filter-bar .btn {
   border: 1px solid var(--border);
   color: var(--charcoal);
