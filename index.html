@@ -75,11 +75,11 @@
             <div class="hero-art" aria-hidden="true">
               <div class="hero-blob"></div>
 
-              <svg class="deco deco-float" style="width:54px;height:54px; top:2%; left:4%;" viewBox="0 0 54 54"><circle cx="27" cy="27" r="24" fill="none" stroke="var(--peach)" stroke-width="4"/></svg>
-              <div class="deco" style="width:14px;height:14px; top:12%; right:6%; background-color:var(--blush); border-radius:50%;"></div>
-              <svg class="deco deco-float" style="top:82%; left:0%;" width="40" height="36" viewBox="0 0 40 36"><path d="M20 2 L38 33 L2 33 Z" fill="none" stroke="var(--lavender)" stroke-width="3.5" stroke-linejoin="round"/></svg>
-              <svg class="deco" style="bottom:6%; right:2%;" width="70" height="24" viewBox="0 0 70 24"><path d="M2 18 C 12 4, 22 4, 32 18 S 52 32, 62 18" fill="none" stroke="var(--mint-ink)" stroke-width="3.5" stroke-linecap="round"/></svg>
-              <div class="deco deco-float" style="width:10px;height:10px; bottom:32%; left:-2%; background-color:var(--butter); border-radius:50%;"></div>
+              <svg class="deco deco-ring deco-float" viewBox="0 0 54 54"><circle cx="27" cy="27" r="24" fill="none" stroke="var(--peach)" stroke-width="4"/></svg>
+              <div class="deco deco-dot-1"></div>
+              <svg class="deco deco-triangle deco-float" width="40" height="36" viewBox="0 0 40 36"><path d="M20 2 L38 33 L2 33 Z" fill="none" stroke="var(--lavender)" stroke-width="3.5" stroke-linejoin="round"/></svg>
+              <svg class="deco deco-squiggle" width="70" height="24" viewBox="0 0 70 24"><path d="M2 18 C 12 4, 22 4, 32 18 S 52 32, 62 18" fill="none" stroke="var(--mint-ink)" stroke-width="3.5" stroke-linecap="round"/></svg>
+              <div class="deco deco-dot-2 deco-float"></div>
 
               <div class="hero-browser">
                 <div class="hero-browser__chrome"><i></i><i></i><i></i></div>
@@ -108,7 +108,7 @@
               <div class="card-body d-lg-flex align-items-center gap-4">
                 <figure class="mb-3 mb-lg-0 flex-shrink-0">
                   <img src="images/avatar.png" alt="Cartoon illustrated portrait of Laura Gurdak with curly hair and glasses, set against a pastel Memphis-pattern background" class="profile-card__avatar rounded-circle img-fluid mx-auto d-block" width="480" height="480" />
-                  <figcaption class="visually-hidden">Illustrated self-portrait</figcaption>
+                  <figcaption class="small text-center mt-2">Generated with ChatGPT (OpenAI) from a custom prompt by Laura Gurdak, 2026.</figcaption>
                 </figure>
                 <div>
                   <p class="mb-3">
@@ -133,8 +133,8 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
             <div class="feature-card">
-              <div class="feature-card__corner" style="background: var(--grad-lav-mint);"></div>
-              <div class="feature-card__icon" style="background-color: var(--lilac);">
+              <div class="feature-card__corner feature-card__corner--lav-mint"></div>
+              <div class="feature-card__icon feature-card__icon--lilac">
                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="2" y="4" width="22" height="18" rx="4" stroke="var(--lavender-ink)" stroke-width="2"/><path d="M2 9h22" stroke="var(--lavender-ink)" stroke-width="2"/><circle cx="6" cy="6.5" r="1" fill="var(--lavender-ink)"/><path d="M8 15l3 2-3 2M14 19h4" stroke="var(--lavender-ink)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <h3>Full-stack API integrations</h3>
@@ -143,8 +143,8 @@
           </div>
           <div class="col">
             <div class="feature-card">
-              <div class="feature-card__corner" style="background: var(--grad-peach-pink);"></div>
-              <div class="feature-card__icon" style="background-color: var(--peach);">
+              <div class="feature-card__corner feature-card__corner--peach-pink"></div>
+              <div class="feature-card__icon feature-card__icon--peach">
                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="2" y="2" width="22" height="22" rx="5" stroke="var(--peach-ink)" stroke-width="2"/><path d="M7 17V11M13 17V7M19 17v-5" stroke="var(--peach-ink)" stroke-width="2" stroke-linecap="round"/></svg>
               </div>
               <h3>Data-driven decisions</h3>
@@ -153,8 +153,8 @@
           </div>
           <div class="col">
             <div class="feature-card">
-              <div class="feature-card__corner" style="background: var(--grad-aqua-lav);"></div>
-              <div class="feature-card__icon" style="background-color: var(--aqua);">
+              <div class="feature-card__corner feature-card__corner--aqua-lav"></div>
+              <div class="feature-card__icon feature-card__icon--aqua">
                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 2l2.4 6.6L22 11l-6.6 2.4L13 20l-2.4-6.6L4 11l6.6-2.4L13 2z" stroke="var(--aqua-ink)" stroke-width="2" stroke-linejoin="round"/><circle cx="21" cy="21" r="2" fill="var(--aqua-ink)"/></svg>
               </div>
               <h3>AI-assisted development</h3>
@@ -172,43 +172,44 @@
           <span class="section-eyebrow">Services</span>
           <h2 id="servicesHeading" class="section-title">What I can help build</h2>
           <p>The areas I've worked in most, from internship projects to running my own storefront.</p>
+          <p class="small text-muted mb-0">Illustrations below generated with ChatGPT (OpenAI) from custom prompts by Laura Gurdak, 2026.</p>
         </div>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
           <div class="col">
             <figure class="service-tile m-0">
               <img src="images/services1.jpg" alt="Illustration of a browser window with a code editor and layout blocks, representing web development" class="img-fluid" loading="lazy" />
-              <figcaption>Building responsive, accessible interfaces from the ground up.</figcaption>
+              <figcaption>Building responsive, accessible interfaces from the ground up. <span class="figcaption-credit">(ChatGPT-generated illustration)</span></figcaption>
             </figure>
           </div>
           <div class="col">
             <figure class="service-tile m-0">
               <img src="images/services2.jpg" alt="Illustration of a desktop computer displaying a shopping cart icon, representing e-commerce set up" class="img-fluid" loading="lazy" />
-              <figcaption>Getting new storefronts live and ready to sell.</figcaption>
+              <figcaption>Getting new storefronts live and ready to sell. <span class="figcaption-credit">(ChatGPT-generated illustration)</span></figcaption>
             </figure>
           </div>
           <div class="col">
             <figure class="service-tile m-0">
               <img src="images/services3.jpg" alt="Illustration of a shopping cart connected to Shopify, PayPal, email, and shipping icons, representing e-commerce integration" class="img-fluid" loading="lazy" />
-              <figcaption>Connecting platforms like Shopify, Square, and PayPal into one system.</figcaption>
+              <figcaption>Connecting platforms like Shopify, Square, and PayPal into one system. <span class="figcaption-credit">(ChatGPT-generated illustration)</span></figcaption>
             </figure>
           </div>
           <div class="col">
             <figure class="service-tile m-0">
               <img src="images/services4.jpg" alt="Illustration of a dashboard with sales totals, order counts, and a trend chart, representing e-commerce management" class="img-fluid" loading="lazy" />
-              <figcaption>Dashboards that turn daily sales data into clear decisions.</figcaption>
+              <figcaption>Dashboards that turn daily sales data into clear decisions. <span class="figcaption-credit">(ChatGPT-generated illustration)</span></figcaption>
             </figure>
           </div>
           <div class="col">
             <figure class="service-tile m-0">
               <img src="images/services5.jpg" alt="Illustration of a friendly robot assistant on a computer screen, representing AI integration" class="img-fluid" loading="lazy" />
-              <figcaption>Using tools like Claude Code and Cursor to build faster.</figcaption>
+              <figcaption>Using tools like Claude Code and Cursor to build faster. <span class="figcaption-credit">(ChatGPT-generated illustration)</span></figcaption>
             </figure>
           </div>
           <div class="col">
             <figure class="service-tile m-0">
               <img src="images/services6.jpg" alt="Illustration of a database connected to data tables, representing database management" class="img-fluid" loading="lazy" />
-              <figcaption>Structuring and maintaining reliable data layers with Supabase and SQL.</figcaption>
+              <figcaption>Structuring and maintaining reliable data layers with Supabase and SQL. <span class="figcaption-credit">(ChatGPT-generated illustration)</span></figcaption>
             </figure>
           </div>
         </div>
@@ -454,7 +455,7 @@
             <div class="card project-card shadow-sm h-100">
               <figure class="mb-0 project-thumb-logo">
                 <img src="images/myti-logo.png" alt="Myti logo" loading="lazy" />
-                <figcaption class="visually-hidden">Myti logo</figcaption>
+                <figcaption class="visually-hidden">Myti logo, courtesy of <a href="https://myti.com" target="_blank" rel="noopener noreferrer">myti.com</a></figcaption>
               </figure>
               <div class="card-body">
                 <h3 class="h5 card-title">Myti Front End Work</h3>

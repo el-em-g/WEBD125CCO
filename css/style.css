@@ -435,6 +435,41 @@ h1, h2, h3, h4 {
   animation: floaty 6s ease-in-out infinite;
 }
 
+.deco-ring {
+  width: 54px;
+  height: 54px;
+  top: 2%;
+  left: 4%;
+}
+
+.deco-dot-1 {
+  width: 14px;
+  height: 14px;
+  top: 12%;
+  right: 6%;
+  background-color: var(--blush);
+  border-radius: 50%;
+}
+
+.deco-triangle {
+  top: 82%;
+  left: 0;
+}
+
+.deco-squiggle {
+  bottom: 6%;
+  right: 2%;
+}
+
+.deco-dot-2 {
+  width: 10px;
+  height: 10px;
+  bottom: 32%;
+  left: -2%;
+  background-color: var(--butter);
+  border-radius: 50%;
+}
+
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -505,6 +540,14 @@ h1, h2, h3, h4 {
   z-index: 0;
 }
 
+.feature-card__corner--lav-mint { background: var(--grad-lav-mint); }
+.feature-card__corner--peach-pink { background: var(--grad-peach-pink); }
+.feature-card__corner--aqua-lav { background: var(--grad-aqua-lav); }
+
+.feature-card__icon--lilac { background-color: var(--lilac); }
+.feature-card__icon--peach { background-color: var(--peach); }
+.feature-card__icon--aqua { background-color: var(--aqua); }
+
 .feature-card__icon {
   width: 3rem;
   height: 3rem;
@@ -558,6 +601,13 @@ h1, h2, h3, h4 {
   font-size: 0.85rem;
   color: var(--ink-soft);
   border-top: 1px solid var(--border);
+}
+
+.figcaption-credit {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.75;
+  margin-top: 0.25rem;
 }
 
 /* accordion (Experience) */
