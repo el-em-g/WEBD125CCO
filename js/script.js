@@ -43,7 +43,9 @@
       var filter = button.getAttribute("data-filter");
 
       projectCards.forEach(function (card) {
-        var match = filter === "all" || card.getAttribute("data-category") === filter;
+        /* a card can list several space-separated categories, e.g. "web design" */
+        var categories = card.getAttribute("data-category").split(/\s+/);
+        var match = filter === "all" || categories.indexOf(filter) !== -1;
         card.classList.toggle("d-none", !match);
       });
     });
