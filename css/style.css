@@ -712,6 +712,19 @@ h1, h2, h3, h4 {
   border-bottom: none;
 }
 
+/* square logo with its own white background, so fill the frame height
+   instead of shrinking like the smaller company marks */
+.project-thumb-logo--full {
+  background-color: #ffffff; /* matches the logo's own white; --white turns dark in dark mode */
+}
+
+.project-thumb-logo--full img {
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .filter-bar .btn {
   border: 1px solid var(--border);
   color: var(--charcoal);
